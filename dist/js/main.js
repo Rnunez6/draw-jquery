@@ -21811,10 +21811,10 @@ var draw = (function() {
 
     //Write the x,y coods to the target div
     writeXY: function() {
-      document.getElementById('trackX').innerHTML = 'X: ' + x;
-      //$('#trackX').text('X: ' + x);
-      document.getElementById('trackY').innerHTML = 'Y: ' + y;
-      //$('#trackY').text('X: ' + x);
+      //document.getElementById('trackX').innerHTML = 'X: ' + x;
+      $('#trackX').text('X: ' + x);
+      //document.getElementById('trackY').innerHTML = 'Y: ' + y;
+      $('#trackY').text('X: ' + x);
     },
 
     setColor: function(col){
@@ -21956,7 +21956,7 @@ draw.init();
 
 //Add a mousemove listener to the canvas
 //When the mouse reports a change of position use the event data to
-//set and report the x,y position on the mouse.
+/*set and report the x,y position on the mouse.
 draw.getCanvas().addEventListener('mousemove', function(evt) {
   draw.setXY(evt);
   draw.writeXY();
@@ -21964,97 +21964,99 @@ draw.getCanvas().addEventListener('mousemove', function(evt) {
     draw.draw();
   }
 }, false);
-
-/*$(draw.getCanvas()).mousemove(function()
+*/
+$(draw.getCanvas()).mousemove(function(evt)
 {
  draw.setXY(evt);
   draw.writeXY();
   if(draw.getShape()=='path' && draw.getIsDrawing()===true) {
     draw.draw();
   }
-})*/
+})
 
 
 //Add a mousedown listener to the canvas
 //Set the starting position
+/*
 draw.getCanvas().addEventListener('mousedown', function() {
   draw.setStart();
   draw.setIsDrawing(true);
-}, false);
+}, false);*/
 
-/*$(draw.getCanvas()).mousedown(function()
+$(draw.getCanvas()).mousedown(function()
 {
 	draw.setStart();
 	draw.setIsDrawing(true);
-})*/
+})
 
 //Add a mouseup listener to the canvas
-//Set the end position and draw the rectangle
+/*Set the end position and draw the rectangle
 draw.getCanvas().addEventListener('mouseup', function() {
   draw.setEnd();
   draw.draw();
   draw.setIsDrawing(false);
-}, false);
+}, false);*/
 
-/*$(draw.getCanvas()).mouseup(function()
+$(draw.getCanvas()).mouseup(function()
 {
 	draw.setEnd();
 	draw.draw();
 	draw.setIsDrawing(false);
-})*/
+})
 
-document.getElementById('btnRect').addEventListener('click', function(){
+/*document.getElementById('btnRect').addEventListener('click', function(){
     draw.setShape('rectangle');
-}, false);
-/*
+}, false);*/
+
 $(function(){
 	$('#btnRect').on("click",function(){
 		draw.setShape('rectangle');
 	})
-});*/
-
-document.getElementById('btnLine').addEventListener('click', function(){
-    draw.setShape('btnLine');
-}, false);
-
+});
 /*
+document.getElementById('btnLine').addEventListener('click', function(){
+    draw.setShape('line');
+}, false);
+*/
+
 $(function(){
 	$('#btnLine').on("click",function(){
-		draw.setShape('btnLine');
+		draw.setShape('line');
 	})
-});*/
+});
+
+/*
 document.getElementById('btnCircle').addEventListener('click', function(){
     draw.setShape('circle');
 }, false);
+*/
 
-/*
 $(function(){
 	$('#btnCircle').on("click",function(){
 		draw.setShape('circle');
 	})
-});*/
-
+});
+/*
 document.getElementById('btnPath').addEventListener('click', function(){
     draw.setShape('path');
 }, false);
+*/
 
-/*
 $(function(){
 	$('#btnPath').on("click",function(){
 		draw.setShape('path');
 	})
-});*/
-
+});
+/*
 document.getElementById('btnTriangle').addEventListener('click', function(){
   draw.setShape('triangle');
 }, false);
-
-/*
+*/
 $(function(){
 	$('#btnTriangle').on("click",function(){
 		draw.setShape('triangle');
 	})
-});*/
+});
 
 
 document.getElementById('btncolor').addEventListener('change', function(){
