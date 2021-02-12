@@ -53,8 +53,9 @@ var draw = (function() {
 
     //Write the x,y coods to the target div
     writeXY: function() {
-      document.getElementById('trackX').innerHTML = 'X: ' + x;
-      document.getElementById('trackY').innerHTML = 'Y: ' + y;
+      //document.getElementById('trackX').innerHTML = 'X: ' + x;
+      $('#trackX').text('X: ' + x);
+       document.getElementById('trackY').innerHTML = 'Y: ' + y;
     },
 
     //Set the x1,y1
