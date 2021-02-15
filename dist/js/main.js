@@ -10945,7 +10945,7 @@ var draw = (function() {
     },
 
     setColor: function(col){
-      	 color= col;
+      	 color = col;
     },
 
     getColor:function(){
@@ -11184,14 +11184,16 @@ $(function(){
 	})
 });
 
+/*
 document.getElementById('btncolor').addEventListener('change', function(){
   draw.setColor(document.getElementById('btncolor').value);
 }, false);
+*/
 
-/*
 $(function(){
 	$('#btncolor').on("change",function(){
-		draw.setShape('btncolor');
+		//draw.setColor(document.getElementById('btncolor').value);
+    draw.setColor($('#btncolor').val());
 	})
-});*/
+});
 
